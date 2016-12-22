@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<JWM>
+
+  <StartupCommand>
+    sh .onstart
+  </StartupCommand>
+
+  <!-- The root menu. -->
+  <RootMenu onroot="12">
+    <!-- <Dynamic label="Applications"> -->
+    <!--   exec:python3 /home/jason/.menu.py -->
+    <!-- </Dynamic> -->
+    <Include>
+      menu.xml
+    </Include>
+    <Separator />
+    <Restart label="Restart" icon="restart.png"/>
+    <Exit label="Exit" confirm="true" icon="quit.png"/>
+  </RootMenu>
+
+  <!-- Tray at the bottom. -->
+  <Tray x="0" y="-1" height="15" autohide="off">
+
+    <TrayButton icon="system.png">root:1</TrayButton>
+    <Spacer width="2"/>
+    <TrayButton label="_">showdesktop</TrayButton>
+    <Spacer width="2"/>
+
+    <Pager labeled="true"/>
+
+    <TaskList maxwidth="256"/>
+
+    <Dock />
+    <Clock />
+
+  </Tray>
+
+  <!-- Visual Styles -->
+  <WindowStyle>
+    <Font>Sans-9:bold</Font>
+    <Width>4</Width>
+    <Height>15</Height>
+    <Corner>3</Corner>
+    <Foreground>#FFFFFF</Foreground>
+    <Background>#555555</Background>
+    <Outline>#000000</Outline>
+    <Opacity>0.5</Opacity>
+    <Active>
+      <Foreground>#FFFFFF</Foreground>
+      <Background>#000055</Background>
+      <Outline>#000000</Outline>
+      <Opacity>1.0</Opacity>
+    </Active>
+  </WindowStyle>
+  <TrayStyle group="true" list="all">
+    <Font>Sans-9</Font>
+    <Background>#220033</Background>
+    <Foreground>#FFFFFF</Foreground>
+    <Outline>#000000</Outline>
+    <Opacity>0.15</Opacity>
+  </TrayStyle>
+  <PagerStyle>
+    <Outline>#000000</Outline>
+    <Foreground>#110011</Foreground>
+    <Background>#000000</Background>
+    <Text>#FFFFFF</Text>
+    <Active>
+      <Foreground>#330033</Foreground>
+      <Background>#110011</Background>
+    </Active>
+  </PagerStyle>
+  <MenuStyle>
+    <Font>Sans-9</Font>
+    <Foreground>#FFFFFF</Foreground>
+    <Background>#333333</Background>
+    <Outline>#000000</Outline>
+    <Active>
+      <Foreground>#FFFFFF</Foreground>
+      <Background>#0077CC</Background>
+    </Active>
+    <Opacity>0.85</Opacity>
+  </MenuStyle>
+  <PopupStyle>
+    <Font>Sans-9</Font>
+    <Foreground>#000000</Foreground>
+    <Background>#999999</Background>
+  </PopupStyle>
+
+  <!-- .icons.py creates IconPath tags for all icon directories under
+       /usr/share/icons/... -->
+  <Include>
+    icons.xml
+  </Include>
+  <IconPath>
+    /usr/share/jwm
+  </IconPath>
+
+  <!-- Virtual Desktops -->
+  <!-- Desktop tags can be contained within Desktops for desktop names. -->
+  <Desktops width="4" height="1">
+    
+    <Desktop name="alpha">
+      <Background type="solid">#220000</Background>
+    </Desktop>
+
+    <Desktop name="beta">
+      <Background type="solid">#222200</Background>
+    </Desktop>
+
+    <Desktop name="gamma">
+      <Background type="solid">#000022</Background>
+    </Desktop>
+
+    <Desktop name="delta">
+      <Background type="solid">#220022</Background>
+    </Desktop>
+    
+  </Desktops>
+
+  <!-- Double click speed (in milliseconds) -->
+  <DoubleClickSpeed>400</DoubleClickSpeed>
+
+  <!-- Double click delta (in pixels) -->
+  <DoubleClickDelta>2</DoubleClickDelta>
+
+  <!-- The focus model (sloppy or click) -->
+  <FocusModel>sloppy</FocusModel>
+
+  <!-- The snap mode (none, screen, or border) -->
+  <SnapMode distance="10">border</SnapMode>
+
+  <!-- The move mode (outline or opaque) -->
+  <MoveMode>opaque</MoveMode>
+
+  <!-- The resize mode (outline or opaque) -->
+  <ResizeMode>opaque</ResizeMode>
+
+  <!-- Key bindings -->
+  <Key key="Up">up</Key>
+  <Key key="Down">down</Key>
+  <Key key="Right">right</Key>
+  <Key key="Left">left</Key>
+  <Key key="h">left</Key>
+  <Key key="j">down</Key>
+  <Key key="k">up</Key>
+  <Key key="l">right</Key>
+  <Key key="Return">select</Key>
+  <Key key="Escape">escape</Key>
+
+  <!-- Window shortcuts -->
+  <Key mask="A" key="Tab">nextstacked</Key>
+  <Key mask="A" key="#">desktop#</Key>
+  <Key mask="A" key="F1">root:1</Key>
+  <Key mask="A" key="F2">exec:gmrun</Key>
+  <Key mask="A" key="F3">window</Key>
+  <Key mask="A" key="F4">close</Key>
+  <Key mask="A" key="F5">shade</Key>
+  <Key mask="A" key="F6">minimize</Key>
+  <Key mask="A" key="F7">restore</Key>
+  <Key mask="A" key="F8">maximize</Key>
+  <Key mask="A" key="Right">rdesktop</Key>
+  <Key mask="A" key="Left">ldesktop</Key>
+  <Key mask="A" key="Up">udesktop</Key>
+  <Key mask="A" key="Down">ddesktop</Key>
+
+  <!-- Some application shortcuts -->
+  <Key mask="CA" key="t">exec:emacs</Key>
+  <Key mask="CA" key="r">exec:gmrun</Key>
+  <Key mask="CA" key="b">exec:google-chrome</Key>
+  <Key mask="CA" key="m">exec:xterm</Key>
+  <Key mask="CA" key="e">exec:rox</Key>
+
+  <!-- Maximize to half screen with C-A-<arrow> -->
+  <Key mask="CA" key="Up">maxtop</Key>
+  <Key mask="CA" key="Down">maxbottom</Key>
+  <Key mask="CA" key="Right">maxright</Key>
+  <Key mask="CA" key="Left">maxleft</Key>
+
+</JWM>

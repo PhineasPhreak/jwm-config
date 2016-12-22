@@ -1,0 +1,6 @@
+xmodmap /home/jason/.xmodmap &
+tilda &
+nm-applet &
+fdpowermon &
+python3 /home/jason/.icons.py > /home/jason/icons.xml &
+python3 /home/jason/.menu.py > /home/jason/menu.xml &
