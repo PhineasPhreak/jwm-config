@@ -16,6 +16,10 @@
     <Separator />
     <Restart label="Restart" icon="restart.png"/>
     <Exit label="Exit" confirm="true" icon="quit.png"/>
+    <Separator />
+    <Program label="Shut down" icon="exit">
+      poweroff
+    </Program>
   </RootMenu>
 
   <!-- Tray at the bottom. -->
@@ -166,8 +170,8 @@
   <!-- Some application shortcuts -->
   <Key mask="CA" key="t">exec:emacs</Key>
   <Key mask="CA" key="r">exec:gmrun</Key>
-  <Key mask="CA" key="b">exec:google-chrome</Key>
-  <Key mask="CA" key="m">exec:xterm</Key>
+  <Key mask="CA" key="b">exec:x-www-browser</Key>
+  <Key mask="CA" key="m">exec:x-terminal-emulator</Key>
   <Key mask="CA" key="e">exec:rox</Key>
 
   <!-- Maximize to half screen with C-A-<arrow> -->
