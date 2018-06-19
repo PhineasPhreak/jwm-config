@@ -77,7 +77,18 @@ def format_app(app):
 
 print("<JWM>")
 
-for cat in categories:
+app_cats = []
+
+for a in apps:
+    if a["category"] != "Other":
+        app_cats = app_cats + a["category"]
+    else:
+        app_cats.append("Other")
+
+cats_with_apps = [cat for cat in categories
+                  if cat in app_cats]
+
+for cat in cats_with_apps:
     print("""<Menu label="%s" icon="folder.ico">""" % cat)
     print("\n".join(map(format_app,
                         sorted([a for a in apps if cat in a["category"]],
