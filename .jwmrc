@@ -153,26 +153,28 @@
 
   <!-- Window shortcuts -->
   <Key mask="A" key="Tab">nextstacked</Key>
-  <Key mask="A" key="#">desktop#</Key>
   <Key mask="A" key="F1">root:1</Key>
   <Key mask="A" key="F2">exec:gmrun</Key>
   <Key mask="A" key="F3">window</Key>
   <Key mask="A" key="F4">close</Key>
-  <Key mask="A" key="F5">shade</Key>
-  <Key mask="A" key="F6">minimize</Key>
   <Key mask="A" key="F7">restore</Key>
   <Key mask="A" key="F8">maximize</Key>
-  <Key mask="A" key="Right">rdesktop</Key>
-  <Key mask="A" key="Left">ldesktop</Key>
-  <Key mask="A" key="Up">udesktop</Key>
-  <Key mask="A" key="Down">ddesktop</Key>
+  <Key mask="4" key="#">desktop#</Key>
+  <Key mask="4" key="Up">shade</Key>
+  <Key mask="4" key="Down">shade</Key>
+  <Key mask="4" key="x">maximize</Key>
+  <Key mask="4" key="n">minimize</Key>
+  <Key mask="4" key="Right">rdesktop</Key>
+  <Key mask="4" key="Left">ldesktop</Key>
 
   <!-- Some application shortcuts -->
   <Key mask="CA" key="t">exec:emacs</Key>
-  <Key mask="CA" key="r">exec:gmrun</Key>
   <Key mask="CA" key="b">exec:x-www-browser</Key>
   <Key mask="CA" key="m">exec:x-terminal-emulator</Key>
-  <Key mask="CA" key="e">exec:rox</Key>
+  <Key mask="4" key="r">exec:gmrun</Key>
+  <Key mask="4" key="e">exec:thunar</Key>
+  <Key mask="4" key="d">showdesktop</Key>
+  <Key mask="4" key="l">exec:physlock</Key>
 
   <!-- Maximize to half screen with C-A-<arrow> -->
   <Key mask="CA" key="Up">maxtop</Key>
