@@ -1,4 +1,4 @@
-#python3
+#!/bin/env python3
 
 from glob import glob
 import codecs
@@ -33,7 +33,7 @@ for fn in glob("/usr/share/applications/*.desktop"):
            "category": "Other",
            "icon": "",
            "tooltip": ""}
-    
+
     for line in codecs.open(fn, "r", "utf-8").readlines():
         if "=" in line:
             items = line.strip().split("=")
