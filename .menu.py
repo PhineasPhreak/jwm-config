@@ -63,10 +63,7 @@ for fn in glob("/usr/share/applications/*.desktop"):
         pass
 
 def format_app(app):
-    tmpl = """
-<Program label="%(label)s" tooltip="%(tooltip)s" icon="%(icon)s">
-    %(exec)s
-</Program>"""
+    tmpl = """<Program label="%(label)s" tooltip="%(tooltip)s" icon="%(icon)s">%(exec)s</Program>"""
     if app["terminal"]:
         return tmpl % {"label": app["label"],
                        "tooltip": app["tooltip"],
